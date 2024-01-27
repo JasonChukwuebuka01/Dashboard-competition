@@ -777,6 +777,7 @@ td {
 
 .aside-bottom-content {
   position: relative;
+  padding-top: .4rem;
 }
 
 .aside-bottom-header {
@@ -784,8 +785,8 @@ td {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  position: sticky;
-  top: 0;
+  /*position: sticky;*/
+  /*top: 0;*/
   background: inherit;
   margin-bottom: 10px;
 }
@@ -908,7 +909,44 @@ input[type=range]::-webkit-slider-thumb {
 
 
 
-/*********Media   QUERIES *************/
+/*********Media   QUERIES *******1120******/
+
+
+@media (min-width:1121px) and (max-width:1280px) {
+
+
+.chart-box-content{
+  max-height: 30rem;
+}
+
+.chart-lastOrder-wrapper{
+  justify-content: space-evenly;
+  gap: 28px;
+}
+
+
+.aside-top{
+  padding: 25px 10px;
+  max-height: 50rem;
+}
+
+
+
+.aside-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10.7px;
+  margin-top: -1.2rem;
+  
+}
+
+.aside-bottom-section{
+  padding-top: 1.3rem;
+}
+
+}
+
+
 @media (max-width:1120px) {
 
   .nav-section {
@@ -1043,6 +1081,7 @@ input[type=range]::-webkit-slider-thumb {
   select {
     margin-top: 3px;
     font-size: .7rem;
+    cursor: pointer;
   }
 
 
