@@ -86,7 +86,7 @@ const Chart = () => {
             <div className={`chart-header-content ${!toggleTheme? "darkMode": "" }`}>
                 <h3 className='title'>Sales Trends</h3>
                 <div className="chart-select-group">
-                    <span>Sort by : </span>
+                    <span >Sort by : </span>
                     <select name="fitler" id="filter" className='select'>
                         <option value="daily">Daily</option>
                         <option value="Weekly" selected>Weekly</option>
@@ -94,17 +94,12 @@ const Chart = () => {
                 </div>
             </div>
             <div className="chart-box">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="100%"  className="chartt">
                     <BarChart
                         width={500}
                         height={300}
                         data={data}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
+                        
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />

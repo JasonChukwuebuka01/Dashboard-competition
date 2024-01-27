@@ -54,17 +54,10 @@ const GraphItemsList = () => {
 
 
 
-    const handleChange = (event, index) => {
-        const newValues = [...sliderValues];
-        newValues[index].value = event.target.value;
-        setSliderValues(newValues);
-    };
-
-
     return (
         <div className={`aside-bottom-section ${!toggleTheme ? "darkMode" : ""}`}>
             <div className="aside-bottom-content">
-                <div className="aside-bottom-header">
+                <div className={`aside-bottom-header  ${!toggleTheme ? "darkMode" : ""}`}>
                     <h3>Top Platform</h3>
                     <h3 className='green'>See All</h3>
                 </div>
@@ -93,7 +86,6 @@ const GraphItemsList = () => {
                     }
                 </ul>
             </div>
-
 
         </div>
     )

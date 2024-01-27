@@ -46,7 +46,8 @@ const navListSecond = [
     },
     {
         imgUrl: "/images/sideBarImages/icon_11.png",
-        className: "nav-list"
+        className: "nav-list",
+        Alert: ()=>alert("~Perfect design doesnt exist~ -Sensei ")
     },
 
 ];
@@ -64,9 +65,9 @@ const Nav = ({ navToggle }) => {
                 <ul className={`nav-content-list `}>
                     {
                         navList.map((val, i) => (
-                            <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`}>
+                            <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`}  >
 
-                                <img src={val.imgUrl} alt="" className='image' />
+                                <img src={val.imgUrl} alt="" className='image'  />
 
                             </li>
                         ))
@@ -94,7 +95,7 @@ const Nav = ({ navToggle }) => {
                     <ul className="nav-content-list">
                         {
                             navListSecond.map((val, i) => (
-                                <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`}>
+                                <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`} onClick={()=>val.Alert()}>
                                     <img src={val.imgUrl} alt="" className='image' />
                                 </li>
                             ))

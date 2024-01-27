@@ -17,30 +17,30 @@ import { IoMdClose } from "react-icons/io"
 const navList = [
     {
         imgUrl: "/images/sideBarImages/icon_01.png",
-    
+
     },
     {
         imgUrl: "/images/sideBarImages/icon_02.png"
-       
+
     },
 
     {
         imgUrl: "/images/sideBarImages/icon_03.png"
-        
+
     },
 
     {
         imgUrl: "/images/sideBarImages/icon_04.png"
-        
+
     },
 
     {
         imgUrl: "/images/sideBarImages/icon_07.png"
-       
+
     },
     {
         imgUrl: "/images/sideBarImages/icon_08.png",
-       
+
     },
 
 ];
@@ -48,15 +48,16 @@ const navList = [
 const navListSecond = [
     {
         imgUrl: "/images/sideBarImages/icon_09.png"
-        
+
     },
     {
         imgUrl: "/images/sideBarImages/icon_10.png"
-       
+
     },
     {
-        imgUrl: "/images/sideBarImages/icon_11.png"
-        
+        imgUrl: "/images/sideBarImages/icon_11.png",
+        Alert: ()=>alert("~Perfect design doesnt exist~ -Sensei ")
+
     },
 
 ];
@@ -91,7 +92,9 @@ const Header = ({ navToggle, setNavToggle }) => {
         return `${daysArr[weekDay]}  ${day} ${monthsArr[month]}, ${year}`
     };
 
-
+    function handleAlert() {
+        alert("~Thank You King David and Geegpay for this awesome opportunity~ -Sensei")
+    }
 
     return (
         <header className={`header-section  ${headerFixed ? "header-fixed fadeInUp" : ""} ${!toggleTheme ? "darkMode" : ""}`}>
@@ -126,6 +129,8 @@ const Header = ({ navToggle, setNavToggle }) => {
                 {/************End of Header Ui for smaller devices*****************/}
 
 
+
+                {/*********** Main Header for larger devices**********************/}
                 <div className="header-content">
                     <div className="header-title-icon-box">
                         <div className='logo-image'>
@@ -161,7 +166,7 @@ const Header = ({ navToggle, setNavToggle }) => {
 
                             <div className="header-profile-box">
                                 <div className="photo-thumb">
-                                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="" width={50} height={50} />
+                                    <img src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-286.jpg" alt="" className='photo-thumb-image' />
                                 </div>
                                 <div className="header-profile-name-box">
                                     <h4>Justin Bergson</h4>
@@ -172,13 +177,13 @@ const Header = ({ navToggle, setNavToggle }) => {
                                         : <IoIosArrowDown className='drop-down-icon' onClick={() => setToggleProfileSelectIcon(!toggleProfileSelectIcon)} />
                                 }
                                 <ul className={`md-profile-content ${toggleProfileSelectIcon ? "active" : ""} ${!toggleTheme ? "darkMode" : ""}`}>
-                                    <li className='profile-list-item'><CiLogout /> <p>LogOut</p></li>
+                                    <li className='profile-list-item'><CiLogout /> <p onClick={handleAlert}>LogOut</p></li>
                                 </ul>
                             </div>
 
                             <div className="profile-box">
                                 <div className="profile-image">
-                                    <img src="https://img.freepik.com/free-photo/black-boy-posing_23-2148171777.jpg" alt="" />
+                                    <img src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-286.jpg" alt="" className='profile-box-image' />
                                 </div>
                                 {
                                     toggleProfileSelectIcon ? <IoIosArrowUp className='drop-down-icon' onClick={() => setToggleProfileSelectIcon(!toggleProfileSelectIcon)} />
@@ -187,7 +192,7 @@ const Header = ({ navToggle, setNavToggle }) => {
                                 <ul className={`profile-content ${toggleProfileSelectIcon ? "active" : ""} ${!toggleTheme ? "darkMode" : ""}`}>
                                     <li className='profile-list-item'><FaPerson /><p>Justin Bergson</p></li>
                                     <li className='profile-list-item'><MdMarkEmailUnread /><p>Justin@gmail</p></li>
-                                    <li className='profile-list-item'><CiLogout /> <p>LogOut</p></li>
+                                    <li className='profile-list-item'><CiLogout /> <p onClick={handleAlert}>LogOut</p></li>
                                 </ul>
 
                             </div>
@@ -209,17 +214,19 @@ const Header = ({ navToggle, setNavToggle }) => {
                     </div>
                 </div>
 
+                {/*********** End of Main Header for larger devices**********************/}
 
 
 
 
 
+                {/*********** Nav Header for medium-smaller devices**********************/}
 
                 <nav className={`nav-header ${navToggle ? "active" : ""}`}>
                     <div className="nav-header-top-group">
 
                         <div >
-                            <img src="/images/sideBarImages/logo.png" alt=""  className='nav-header-logo'/>
+                            <img src="/images/sideBarImages/logo.png" alt="" className='nav-header-logo' />
                         </div>
                     </div>
 
@@ -256,7 +263,7 @@ const Header = ({ navToggle, setNavToggle }) => {
                             <ul className="nav-header-content-list">
                                 {
                                     navListSecond.map((val, i) => (
-                                        <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`}>
+                                        <li key={i} className={`${val.className} ${!toggleTheme ? "darkMode" : "lightMode"}`} onClick={()=>val.Alert()}>
                                             <img src={val.imgUrl} alt="" className='image' />
                                         </li>
                                     ))
@@ -266,6 +273,8 @@ const Header = ({ navToggle, setNavToggle }) => {
                         </div>
                     </div>
                 </nav>
+
+                {/*********** End of Nav Header for medium-smaller devices**********************/}
 
             </div>
         </header>
