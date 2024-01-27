@@ -6,7 +6,7 @@ export const authContext = createContext();
 
 const ContextProvider = ({ children }) => {
 
-    const [toggleTheme, setToggleTheme] = useState(false);
+    const [toggleTheme, setToggleTheme] = useState(true);
 
     function themeToggle(isToggled) {
         setToggleTheme(isToggled);
